@@ -33,12 +33,19 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int a = scn.nextInt(); long n = scn.nextLong();
-        System.out.println(spow(a,n));
+        System.out.println(spow_opti(a,n));
 
     }
     public static long spow(int a, long n)
     {
         if(n==1) return a;
         return(a*spow(a,n-1));
+    }
+    public static long spow_opti(int a, long n)
+    {
+        if(n==1) return a;
+        long temp = spow_opti(a,n/2);
+        if(n%2==0) return (temp*temp);
+        else return (temp*temp*a);
     }
 }
