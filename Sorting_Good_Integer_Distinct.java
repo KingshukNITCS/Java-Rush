@@ -46,6 +46,5 @@ public class Solution {
             i++;
         }
         System.out.println(gn);
-     
     }
-}//Test File
+}
