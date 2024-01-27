@@ -61,13 +61,13 @@ public class Solution {
 
         Arrays.sort(arr);
 
-        int count=0, i=0, gn=0;
+        int i=0, gn=0;
 
         while(i<n)
 
         {
 
-            if(arr[i]==count) 
+            if(arr[i]==i) 
             {
                 if(i==0)
                 {
@@ -89,7 +89,7 @@ public class Solution {
                 }
             }
 
-            count++;
+            
 
             i++;
 
