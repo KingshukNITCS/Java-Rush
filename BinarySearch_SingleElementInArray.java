@@ -1,3 +1,33 @@
+/*
+
+You are given an array consisting of n integers where every element appears exactly twice, except for one element which appears exactly once. Duplicate Numbers are adjacent to each other.
+
+Return the single element that appears only once.
+
+Your solution must run in O(log n) time and O(1) space.
+
+Leetcode Link: https://leetcode.com/problems/single-element-in-a-sorted-array/description/
+Input Format
+
+First line contains integer n representing the length of array
+Second line contains n integers
+Constraints
+
+1 <= n <= 10^9
+Output Format
+
+Return the number appearing only once.
+Sample Input 0
+
+15
+4 4 1 1 9 9 11 11 20 7 7 3 3 5 5
+Sample Output 0
+
+20
+
+*/
+
+
 import java.io.*;
 import java.util.*;
 
