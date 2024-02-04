@@ -23,7 +23,7 @@ class MinStack {
         //System.out.println(mst.peek());
         //System.out.println(st.peek());
         
-        // == won't work / use equals()
+        // == won't work because stack contains Integer objects / use equals() to compare objects 
         if((st.peek()).equals(mst.peek()))
         {
             //System.out.println(mst.peek());
