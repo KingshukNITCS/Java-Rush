@@ -1,5 +1,5 @@
 // Template to change levels in tree. Just use an inner for loop
-
+// Here nested loop but time complexity O(n)
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
