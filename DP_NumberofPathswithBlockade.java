@@ -39,9 +39,7 @@ public class Solution {
                 int k = sc.nextInt();
                 if(k==0) arr[i][j] = k;
                 else arr[i][j] = -1;
-
             }
-
         }
         int c=0;
         for(int i=0;i<m;i++)
@@ -52,15 +50,10 @@ public class Solution {
         }
         c=0;
         for(int j=0;j<n;j++)
-
-        {
-            
-            
+         {                        
             if(c==0 && arr[0][j]==-1) arr[0][j]=1;
             if(arr[0][j]==0) c++;
-
             if(c>0) arr[0][j]=0;
-
         }
         System.out.print(paths(arr,m-1,n-1));
     }
@@ -68,6 +61,6 @@ public class Solution {
     {
         if(arr[x][y]!=-1) return arr[x][y];
         arr[x][y]=paths(arr,x-1,y)+paths(arr,x,y-1);
-        return arr[x][y];
+        return arr[x][y];     
     }
-              }
+}
