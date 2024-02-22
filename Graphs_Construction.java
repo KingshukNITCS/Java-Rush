@@ -2,11 +2,15 @@
 void construction(int n, int m, int[m][2] edges)
 {
   List<List<Integer>> graph = new ArrayList<>();
+  for(int i=0; i<n; i++)
+  {
+    graph.add(new ArrayList<>());
+  }
   for(int i=0; i<m; i++)
   {
     int u = edges[i][0];
     int v = edges[i][1];
     graph.get(u).add(v);
-    
+    graph.get(v).add(u);
   }
 }
