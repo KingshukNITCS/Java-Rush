@@ -1,4 +1,4 @@
-//{ Driver Code Starts https://www.geeksforgeeks.org/problems/number-of-provinces/1?utm_source=gfg
+//{ Driver Code Starts
 import java.io.*;
 import java.util.*;
 
@@ -33,31 +33,47 @@ class GFG {
 
 class Solution {
     static int numProvinces(ArrayList<ArrayList<Integer>> adj, int V) {
-        boolean[] varr = new boolean[V];
-        int vert = 1; 
-        int prov = 0;
-        while(vert<=V)
+        ArrayList<ArrayList<Integer>> adjl = new ArrayList<ArrayList<Integer>>();
+        for(int k=0; k<V; k++)
         {
-            if(dfs(vert,varr,adj) == true) prov++;
-            vert++;
+            adjl.add(new ArrayList<Integer>());
+        }
+        for(int i=0; i<V; i++)
+        {
+            int rs = adj.get(i).size();
+            for(int j=0; j<rs; j++)
+            {
+                if(adj.get(i).get(j)==1)
+                {
+                    adjl.get(i).add(j);
+                    adjl.get(j).add(i);
+                }
+            }
+        }
+        boolean[] varr = new boolean[V];
+        int prov=0;
+        for(int vert=0; vert<V; vert++)
+        {
+            if(varr[vert]==false) 
+            {
+                varr[vert]=true;
+                dfs(vert,varr,adjl);
+                prov++;
+            }
+            else continue;
         }
         return prov;
     }
-    static boolean dfs(int vert, boolean[] varr, ArrayList<ArrayList<Integer>> adj)
+    static void dfs(int vert, boolean[] varr, ArrayList<ArrayList<Integer>> adj)
     {
-        if(varr[vert-1]==true) return false;
-        else
+        for(int vx : adj.get(vert))
         {
-            for(int av : adj.get(vert))
+            if(varr[vx]==true) continue;
+            else
             {
-                if(varr[av-1]==true) continue;
-                else
-                {
-                    varr[av-1]=true;
-                    dfs(av,varr,adj);
-                }
+                varr[vx]=true;
+                dfs(vx,varr,adj);
             }
-            return true;
         }
     }
 };
