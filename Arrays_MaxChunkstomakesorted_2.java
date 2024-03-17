@@ -29,7 +29,7 @@ class Solution {
         // Iterate till second last index & for last index there will be a chunk
         for(int i=0; i<len-1; i++)
         {
-            if(pfmax[i]<=sfmin[i+1]) chunk++;
+            if(pfmax[i]<=sfmin[i+1]) chunk++; // <= to handle repetitions, more repetition more chunks
         }        
         if(chunk==0) return 1;
         return ++chunk;
